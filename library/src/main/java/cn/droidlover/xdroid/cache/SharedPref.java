@@ -11,7 +11,6 @@ import cn.droidlover.xdroid.kit.SingletonCtx;
 
 public class SharedPref extends SingletonCtx<SharedPref> implements ICache {
 
-    private static SharedPref instance;
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
