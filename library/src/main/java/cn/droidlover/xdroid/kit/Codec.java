@@ -514,7 +514,7 @@ public class Codec {
 
     }
 
-    private static boolean checkNull(String text) {
+    public static boolean checkNull(String text) {
         if (text == null || text.length() == 0)
             return true;
         else

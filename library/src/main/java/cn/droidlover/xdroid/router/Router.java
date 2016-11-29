@@ -23,7 +23,7 @@ public class Router {
         intent = new Intent();
     }
 
-    public Router newIntent() {
+    public static Router newIntent() {
         return new Router();
     }
 
@@ -86,7 +86,6 @@ public class Router {
                 callback.onError(from, to, throwable);
             }
         }
-
     }
 
     public static void pop(Activity activity) {

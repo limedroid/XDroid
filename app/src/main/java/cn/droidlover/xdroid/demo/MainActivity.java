@@ -7,4 +7,5 @@ import cn.droidlover.xdroid.base.XActivity;
  */
 
 public class MainActivity extends XActivity{
+
 }
