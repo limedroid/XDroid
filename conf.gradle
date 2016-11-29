@@ -4,7 +4,6 @@ ext {
             compileSdkVersion: 23,
             buildToolsVersion: "23.0.2",
 
-            applicationId    : "com.kxg.happyshopping",
             minSdkVersion    : 15,
             targetSdkVersion : 22,
 
