@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cn.droidlover.xdroid.kit.Codec;
-import cn.droidlover.xdroid.kit.CommonKit;
+import cn.droidlover.xdroid.kit.Kits;
 import cn.droidlover.xdroid.kit.SingletonCtx;
 
 /**
@@ -34,7 +34,7 @@ public class DiskCache extends SingletonCtx<DiskCache> {
             if (!cacheDir.exists()) {
                 cacheDir.mkdirs();
             }
-            cache = DiskLruCache.open(cacheDir, CommonKit.Package.getVersionCode(context), 1, 10 * 1024 * 1024);        //10M
+            cache = DiskLruCache.open(cacheDir, Kits.Package.getVersionCode(context), 1, 10 * 1024 * 1024);        //10M
         } catch (IOException e) {
             e.printStackTrace();
         }
