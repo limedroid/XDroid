@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import cn.droidlover.xdroid.kit.KnifeKit;
 import cn.droidlover.xdroid.kit.event.EventKit;
 
 /**
@@ -30,7 +30,7 @@ public abstract class XFragment extends Fragment implements UiCallback {
         layoutInflater = inflater;
         if (rootView == null) {
             rootView = inflater.inflate(getLayoutId(), null);
-            unbinder = ButterKnife.bind(this, rootView);
+            unbinder = KnifeKit.bind(this, rootView);
         } else {
             ViewGroup viewGroup = (ViewGroup) rootView.getParent();
             if (viewGroup != null) {
@@ -67,9 +67,7 @@ public abstract class XFragment extends Fragment implements UiCallback {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (unbinder != Unbinder.EMPTY) {
-            unbinder.unbind();
-        }
+        KnifeKit.unbind(unbinder);
         EventKit.unregister(this);
         getUiDelegate().destory();
     }

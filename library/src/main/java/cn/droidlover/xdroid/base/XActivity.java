@@ -70,9 +70,7 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (unbinder != Unbinder.EMPTY) {
-            unbinder.unbind();
-        }
+        KnifeKit.unbind(unbinder);
         getUiDelegate().destory();
     }
 }
