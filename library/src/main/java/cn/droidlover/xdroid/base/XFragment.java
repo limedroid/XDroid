@@ -10,24 +10,18 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import cn.droidlover.xdroid.kit.event.EventKit;
 
 /**
  * Created by wanglei on 2016/11/27.
  */
 
-public abstract class XFragment extends Fragment {
+public abstract class XFragment extends Fragment implements UiCallback {
     protected View rootView;
     protected LayoutInflater layoutInflater;
     protected Context context;
-    protected UiCallback uiDelegate;
+    protected UiDelegate uiDelegate;
     private Unbinder unbinder;
-
-
-    protected abstract void initData(Bundle savedInstanceState);
-
-    protected abstract void setListener();
-
-    protected abstract int getLayoutId();
 
 
     @Nullable
@@ -51,6 +45,9 @@ public abstract class XFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        if (userEventBus()) {
+            EventKit.register(this);
+        }
         setListener();
         initData(savedInstanceState);
     }
@@ -73,10 +70,11 @@ public abstract class XFragment extends Fragment {
         if (unbinder != Unbinder.EMPTY) {
             unbinder.unbind();
         }
+        EventKit.unregister(this);
         getUiDelegate().destory();
     }
 
-    protected UiCallback getUiDelegate() {
+    protected UiDelegate getUiDelegate() {
         if (uiDelegate == null) {
             uiDelegate = UiDelegateBase.create(getContext());
         }

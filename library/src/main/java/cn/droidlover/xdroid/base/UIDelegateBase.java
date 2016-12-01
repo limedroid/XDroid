@@ -8,7 +8,7 @@ import android.widget.Toast;
  * Created by wanglei on 2016/12/1.
  */
 
-public class UiDelegateBase implements UiCallback {
+public class UiDelegateBase implements UiDelegate {
 
     public Context context;
 

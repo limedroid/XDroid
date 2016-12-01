@@ -7,21 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 
 import butterknife.Unbinder;
 import cn.droidlover.xdroid.kit.KnifeKit;
+import cn.droidlover.xdroid.kit.event.EventKit;
 
 /**
  * Created by wanglei on 2016/11/27.
  */
 
-public abstract class XActivity extends AppCompatActivity {
+public abstract class XActivity extends AppCompatActivity implements UiCallback{
     protected Activity context;
-    protected UiCallback uiDelegate;
+    protected UiDelegate uiDelegate;
     private Unbinder unbinder;
-
-    protected abstract void initData(Bundle savedInstanceState);
-
-    protected abstract void setListener();
-
-    protected abstract int getLayoutId();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,7 +32,7 @@ public abstract class XActivity extends AppCompatActivity {
     }
 
 
-    protected UiCallback getUiDelegate() {
+    protected UiDelegate getUiDelegate() {
         if (uiDelegate == null) {
             uiDelegate = UiDelegateBase.create(this);
         }
@@ -45,15 +40,31 @@ public abstract class XActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        if (userEventBus()) {
+            EventKit.register(this);
+        }
+    }
+
+
+    @Override
     protected void onResume() {
         super.onResume();
         getUiDelegate().resume();
     }
 
+
     @Override
     protected void onPause() {
         super.onPause();
         getUiDelegate().pause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventKit.unregister(this);
     }
 
     @Override
