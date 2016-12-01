@@ -45,7 +45,7 @@ public abstract class XFragment extends Fragment implements UiCallback {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (userEventBus()) {
+        if (useEventBus()) {
             EventKit.register(this);
         }
         setListener();

@@ -13,5 +13,5 @@ public interface UiCallback {
 
     int getLayoutId();
 
-    boolean userEventBus();
+    boolean useEventBus();
 }

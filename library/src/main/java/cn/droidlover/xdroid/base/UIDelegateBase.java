@@ -18,7 +18,7 @@ public class UiDelegateBase implements UiDelegate {
 
     public static UiDelegateBase create(Context context) {
         return new UiDelegateBase(context);
-    }
+    } 
 
     @Override
     public void resume() {

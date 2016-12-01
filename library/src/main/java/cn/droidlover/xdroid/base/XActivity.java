@@ -42,7 +42,7 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
     @Override
     protected void onStart() {
         super.onStart();
-        if (userEventBus()) {
+        if (useEventBus()) {
             EventKit.register(this);
         }
     }
