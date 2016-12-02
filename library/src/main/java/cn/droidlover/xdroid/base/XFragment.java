@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.Unbinder;
+import cn.droidlover.xdroid.event.BusFactory;
 import cn.droidlover.xdroid.kit.KnifeKit;
-import cn.droidlover.xdroid.kit.event.EventKit;
 
 /**
  * Created by wanglei on 2016/11/27.
@@ -46,7 +46,7 @@ public abstract class XFragment extends Fragment implements UiCallback {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (useEventBus()) {
-            EventKit.register(this);
+            BusFactory.getBus().register(this);
         }
         setListener();
         initData(savedInstanceState);
@@ -68,7 +68,7 @@ public abstract class XFragment extends Fragment implements UiCallback {
     public void onDestroyView() {
         super.onDestroyView();
         KnifeKit.unbind(unbinder);
-        EventKit.unregister(this);
+        BusFactory.getBus().unregister(this);
         getUiDelegate().destory();
     }
 

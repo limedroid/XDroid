@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.Unbinder;
+import cn.droidlover.xdroid.event.BusFactory;
 import cn.droidlover.xdroid.kit.KnifeKit;
-import cn.droidlover.xdroid.kit.event.EventKit;
 
 /**
  * Created by wanglei on 2016/11/27.
@@ -43,7 +43,7 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
     protected void onStart() {
         super.onStart();
         if (useEventBus()) {
-            EventKit.register(this);
+            BusFactory.getBus().register(this);
         }
     }
 
@@ -64,7 +64,7 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
     @Override
     protected void onStop() {
         super.onStop();
-        EventKit.unregister(this);
+        BusFactory.getBus().unregister(this);
     }
 
     @Override

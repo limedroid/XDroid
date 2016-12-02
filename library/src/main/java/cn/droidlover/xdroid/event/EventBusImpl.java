@@ -1,4 +1,4 @@
-package cn.droidlover.xdroid.kit.event;
+package cn.droidlover.xdroid.event;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -6,27 +6,30 @@ import org.greenrobot.eventbus.EventBus;
  * Created by wanglei on 2016/11/28.
  */
 
-public class EventKit {
+public class EventBusImpl implements IBus {
 
-    public static void register(Object object) {
+    @Override
+    public void register(Object object) {
         if (!EventBus.getDefault().isRegistered(object)) {
             EventBus.getDefault().register(object);
         }
     }
 
-    public static void unregister(Object object) {
+
+    @Override
+    public void unregister(Object object) {
         if (EventBus.getDefault().isRegistered(object)) {
             EventBus.getDefault().unregister(object);
         }
     }
 
-    public static void post(IEvent event) {
+    @Override
+    public void post(IEvent event) {
         EventBus.getDefault().post(event);
     }
 
-    public static void postSticky(IEvent event) {
+    @Override
+    public void postSticky(IEvent event) {
         EventBus.getDefault().postSticky(event);
     }
-
-
 }
