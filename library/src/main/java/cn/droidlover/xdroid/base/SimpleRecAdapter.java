@@ -21,10 +21,10 @@ public abstract class SimpleRecAdapter<T, F extends RecyclerView.ViewHolder> ext
     @Override
     public F onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(getLayoutId(), parent, false);
-        return getViewHolder(view);
+        return newViewHolder(view);
     }
 
-    public abstract F getViewHolder(View itemView);
+    public abstract F newViewHolder(View itemView);
 
     public abstract int getLayoutId();
 

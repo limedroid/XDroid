@@ -3,6 +3,8 @@ package cn.droidlover.xdroid.imageloader;
 import android.content.Context;
 import android.widget.ImageView;
 
+import java.io.File;
+
 /**
  * Created by wanglei on 2016/11/27.
  */
@@ -11,11 +13,14 @@ public interface ILoader {
 
     void init(Context context);
 
-    void loadImage(ImageView target, String url, Options option);
+    void loadNet(ImageView target, String url, Options options);
+    void loadResource(ImageView target, int resId, Options options);
+    void loadAssets(ImageView target, String assetName, Options options);
+    void loadFile(ImageView target, File file, Options options);
 
-    void clearMemoryCache();
+    void clearMemoryCache(Context context);
 
-    void clearCache();
+    void clearDiskCache(Context context);
 
 
     class Options {
