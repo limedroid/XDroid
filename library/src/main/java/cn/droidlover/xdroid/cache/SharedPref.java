@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import cn.droidlover.xdroid.kit.SingletonCtx;
+import cn.droidlover.xdroid.kit.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/27.
@@ -14,7 +15,7 @@ public class SharedPref extends SingletonCtx<SharedPref> implements ICache {
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
-    static final String SP_NAME = "config";
+    static final String SP_NAME = XDroidConf.CACHE_SP_NAME;
 
     private SharedPref(Context context) {
         sharedPreferences = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);

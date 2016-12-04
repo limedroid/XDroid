@@ -3,14 +3,16 @@ package cn.droidlover.xdroid.log;
 import android.text.TextUtils;
 import android.util.Log;
 
+import cn.droidlover.xdroid.kit.XDroidConf;
+
 /**
  * Created by wanglei on 2016/11/29.
  */
 
 public class XLog {
 
-    public static boolean LOG = true;
-    public static String TAG_ROOT = "XLog";
+    public static boolean LOG = XDroidConf.LOG;
+    public static String TAG_ROOT = XDroidConf.LOG_TAG;
 
     public static void json(String json) {
         json(Log.DEBUG, null, json);

@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 import cn.droidlover.xdroid.kit.Codec;
 import cn.droidlover.xdroid.kit.Kits;
 import cn.droidlover.xdroid.kit.SingletonCtx;
+import cn.droidlover.xdroid.kit.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/28.
@@ -142,7 +143,7 @@ public class DiskCache extends SingletonCtx<DiskCache> {
     }
 
     public String getCacheDir() {
-        return "cache";
+        return XDroidConf.CACHE_DISK_DIR;
     }
 
 
