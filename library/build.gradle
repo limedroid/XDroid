@@ -30,4 +30,5 @@ dependencies {
     compile rootProject.ext.dependencies["xrecyclerview"]
     compile rootProject.ext.dependencies["butterknife"]
     compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["okhttputils"]
 }

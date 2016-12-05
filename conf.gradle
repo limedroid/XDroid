@@ -5,7 +5,7 @@ ext {
             buildToolsVersion: "23.0.2",
 
             minSdkVersion    : 15,
-            targetSdkVersion : 22,
+            targetSdkVersion : 23,
 
             versionCode      : 1,
             versionName      : '1.0.0',
@@ -25,6 +25,9 @@ ext {
             "okhttp3"        : "com.squareup.okhttp3:okhttp:3.3.0",
             "gson"           : "com.google.code.gson:gson:2.6.2",
             "eventbus"       : "org.greenrobot:eventbus:3.0.0",
-            "xrecyclerview"  : "cn.droidlover:XRecyclerView:1.0.0"
+            "xrecyclerview"  : "cn.droidlover:XRecyclerView:1.0.0",
+            "okhttputils"    : "com.zhy:okhttputils:2.6.2",
+            "canary-debug"   : "com.squareup.leakcanary:leakcanary-android:1.4-beta2",
+            "canary-release" : "com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2"
     ]
 }
