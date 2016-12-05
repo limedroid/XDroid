@@ -1,5 +1,7 @@
 package cn.droidlover.xdroid.kit;
 
+import cn.droidlover.xdroid.router.Router;
+
 /**
  * Created by wanglei on 2016/12/4.
  */
@@ -12,5 +14,9 @@ public class XDroidConf {
     // #cache
     public static final String CACHE_SP_NAME = "config";
     public static final String CACHE_DISK_DIR = "cache";
+
+    //#router
+    public static final int ROUTER_ANIM_ENTER = Router.RES_NONE;
+    public static final int ROUTER_ANIM_EXIT = Router.RES_NONE;
 
 }

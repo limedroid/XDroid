@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.text.method.Touch;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+
+import cn.droidlover.xdroid.kit.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/29.
@@ -21,8 +21,10 @@ public class Router {
     private Class<?> to;
     private Bundle data;
     private int requestCode = -1;
-    private int enterAnim;
-    private int exitAnim;
+    private int enterAnim = XDroidConf.ROUTER_ANIM_ENTER;
+    private int exitAnim = XDroidConf.ROUTER_ANIM_EXIT;
+
+    public static final int RES_NONE = -1;
 
     private static RouterCallback callback;
 
@@ -48,7 +50,6 @@ public class Router {
         this.data = data;
         return this;
     }
-
 
     public Router putByte(@Nullable String key, byte value) {
         getBundleData().putByte(key, value);
