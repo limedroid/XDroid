@@ -22,6 +22,10 @@
 * 默认使用okhttputils作为api请求，可任性切换retrofit等其他库
 * 引入三方库极少
 
+
+详细说明请前往[wiki](https://github.com/limedroid/XDroid/wiki)
+
+
 ## Get Started
 
 使用，仅需三步：
