@@ -49,4 +49,10 @@ compile project(':library')
 
 修改`kit`包下的`XDroidConf`配置类，主要针对log、cache、router。若采用默认配置，此步骤可略过.
 
+
 > Demo正在卖力整理中...
+
+
+## 关于我
+
+**Email** : droidlover@126.com
