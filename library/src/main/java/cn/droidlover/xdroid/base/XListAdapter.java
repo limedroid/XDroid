@@ -143,41 +143,21 @@ public abstract class XListAdapter<T> extends BaseAdapter {
     }
 
 
-    /**
-     * 获取图片资源
-     *
-     * @param resId
-     * @return
-     */
     protected Drawable getDrawable(int resId) {
         return context.getResources().getDrawable(resId);
     }
 
-    /**
-     * 获取字符串资源
-     *
-     * @param resId
-     * @return
-     */
+
     protected String getString(int resId) {
         return context.getResources().getString(resId);
     }
 
-    /**
-     * 获取颜色资源
-     *
-     * @param resId
-     * @return
-     */
+
     protected int getColor(int resId) {
         return context.getResources().getColor(resId);
     }
 
-    /**
-     * 获取数据源
-     *
-     * @return
-     */
+
     public List<T> getDataSource() {
         return data;
     }
@@ -190,11 +170,7 @@ public abstract class XListAdapter<T> extends BaseAdapter {
         return callback;
     }
 
-    /**
-     * 获取数据源大小
-     *
-     * @return
-     */
+
     public int getSize() {
         return data == null ? 0 : data.size();
     }

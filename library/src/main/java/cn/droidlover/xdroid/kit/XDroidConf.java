@@ -15,7 +15,7 @@ public class XDroidConf {
     public static final String CACHE_SP_NAME = "config";
     public static final String CACHE_DISK_DIR = "cache";
 
-    //#router
+    // #router
     public static final int ROUTER_ANIM_ENTER = Router.RES_NONE;
     public static final int ROUTER_ANIM_EXIT = Router.RES_NONE;
 

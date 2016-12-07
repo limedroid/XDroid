@@ -28,5 +28,4 @@ public abstract class SimpleRecAdapter<T, F extends RecyclerView.ViewHolder> ext
 
     public abstract int getLayoutId();
 
-
 }

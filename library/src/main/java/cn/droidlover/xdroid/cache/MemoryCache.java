@@ -1,6 +1,7 @@
 package cn.droidlover.xdroid.cache;
 
 import android.support.v4.util.LruCache;
+import android.text.TextUtils;
 
 /**
  * Created by wanglei on 2016/11/28.
@@ -32,6 +33,8 @@ public class MemoryCache implements ICache {
 
     @Override
     public synchronized void put(String key, Object value) {
+        if (TextUtils.isEmpty(key)) return;
+
         if (cache.get(key) != null) {
             cache.remove(key);
         }

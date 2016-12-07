@@ -84,7 +84,6 @@ public class SharedPref extends SingletonCtx<SharedPref> implements ICache {
         return sharedPreferences.getString(key, defValue);
     }
 
-
     @Override
     public Object get(String key) {
         return null;
