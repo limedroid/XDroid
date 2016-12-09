@@ -23,7 +23,6 @@ public abstract class XFragment extends Fragment implements UiCallback {
     protected UiDelegate uiDelegate;
     private Unbinder unbinder;
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -62,6 +61,11 @@ public abstract class XFragment extends Fragment implements UiCallback {
     public void onDetach() {
         super.onDetach();
         context = null;
+    }
+
+    @Override
+    public boolean useEventBus() {
+        return true;
     }
 
     @Override

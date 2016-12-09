@@ -19,7 +19,7 @@ import cn.droidlover.xdroid.kit.XDroidConf;
  * Created by wanglei on 2016/11/28.
  */
 
-public class DiskCache extends SingletonCtx<DiskCache> {
+public class DiskCache extends SingletonCtx<DiskCache> implements ICache {
     private DiskLruCache cache;
 
     static String TAG_CACHE = "=====createTime{createTime}expireMills{expireMills}";
@@ -63,6 +63,12 @@ public class DiskCache extends SingletonCtx<DiskCache> {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void put(String key, Object value) {
+        put(key, value != null ? value.toString() : null, NO_CACHE);
+    }
+
 
     public String get(String key) {
         try {
