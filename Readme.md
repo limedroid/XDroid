@@ -53,6 +53,12 @@ compile project(':library')
 > Demo正在卖力整理中...
 
 
+## 相关文档
+
+[我是如何搭建Android快速开发框架的(概述)](http://www.jianshu.com/p/cde5468029b4)
+[我是如何搭建Android快速开发框架的之UI篇(上)](http://www.jianshu.com/p/c909f72cdd02)
+
+
 ## 关于我
 
 **Email** : droidlover@126.com
