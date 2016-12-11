@@ -62,6 +62,10 @@ compile project(':library')
 
 [我是如何搭建Android快速开发框架的之UI篇(上)](http://www.jianshu.com/p/c909f72cdd02)
 
+## 感谢
+
+* 感谢各位江湖前辈大拿的帮助
+* 特别感谢基友石浩提供的建议和完美logo
 
 ## 关于我
 
