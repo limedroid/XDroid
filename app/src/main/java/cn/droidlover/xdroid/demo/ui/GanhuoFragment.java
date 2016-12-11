@@ -24,7 +24,7 @@ public class GanhuoFragment extends BasePagerFragment {
                 public void onItemClick(int position, GankResults.Item model, int tag, GanhuoAdapter.ViewHolder holder) {
                     super.onItemClick(position, model, tag, holder);
                     switch (tag) {
-                        case HomeAdapter.TAG_VIEW:
+                        case GanhuoAdapter.TAG_VIEW:
                             WebActivity.launch(context, model.getUrl(), model.getDesc());
                             break;
                     }
