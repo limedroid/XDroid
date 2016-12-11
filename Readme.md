@@ -2,7 +2,13 @@
 
 ## 概述
 
+<p align="center">
+	<img src="xdroid_logo_128.png"/>
+</p>
+
 **XDroid**是一个轻量级的Android快速开发框架，由`UI`、`Cache`、`Event`、`ImageLoader`、`Kit`、`Log`、`Router`、`Net`等几个部分组成。其设计思想是使用接口对各模块解耦规范化，不强依赖某些明确的三方类库，使得三方类库可自由搭配组装，方便替换。可快速、自由的进行App开发。
+
+> Demo详细使用可参看Demo
 
 ## 特性
 
@@ -15,7 +21,7 @@
 * 实现了Memory、Disk、SharedPreferences三种方式的缓存，可自由扩展
 * 内置了`EventBus`，可自由切换到其他事件订阅库
 * 内置`Glide`，可自由切换其他图片加载库
-* 可输出漂亮的`Log`，支持Json、Xml、Throwable等，实现蝇量级
+* 可输出漂亮的`Log`，支持Json、Xml、Throwable等，蝇量级实现
 * 内置链式路由
 * 内置常用工具类：package、random、file...,提供的都是非常常用的方法
 * 内置加密工具类 `XCodec`，你想要的加密姿势都有
@@ -48,9 +54,6 @@ compile project(':library')
 ### step3
 
 修改`kit`包下的`XDroidConf`配置类，主要针对log、cache、router。若采用默认配置，此步骤可略过.
-
-
-> Demo正在卖力整理中...
 
 
 ## 相关文档
