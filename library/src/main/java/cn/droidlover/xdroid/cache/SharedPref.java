@@ -3,29 +3,35 @@ package cn.droidlover.xdroid.cache;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import cn.droidlover.xdroid.kit.SingletonCtx;
-import cn.droidlover.xdroid.kit.XDroidConf;
+import cn.droidlover.xdroid.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/27.
  */
 
-public class SharedPref extends SingletonCtx<SharedPref> implements ICache {
+public class SharedPref implements ICache {
 
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
     static final String SP_NAME = XDroidConf.CACHE_SP_NAME;
 
+    private static SharedPref instance;
+
     private SharedPref(Context context) {
         sharedPreferences = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
 
-
-    @Override
-    protected SharedPref newInstance(Context context) {
-        return new SharedPref(context);
+    public static SharedPref getInstance(Context context) {
+        if (instance == null) {
+            synchronized (SharedPref.class) {
+                if (instance == null) {
+                    instance = new SharedPref(context.getApplicationContext());
+                }
+            }
+        }
+        return instance;
     }
 
     @Override

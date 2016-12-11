@@ -3,7 +3,7 @@ package cn.droidlover.xdroid.log;
 import android.text.TextUtils;
 import android.util.Log;
 
-import cn.droidlover.xdroid.kit.XDroidConf;
+import cn.droidlover.xdroid.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/29.

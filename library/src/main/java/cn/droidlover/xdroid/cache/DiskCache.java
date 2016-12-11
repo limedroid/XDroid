@@ -12,14 +12,13 @@ import java.util.regex.Pattern;
 
 import cn.droidlover.xdroid.kit.Codec;
 import cn.droidlover.xdroid.kit.Kits;
-import cn.droidlover.xdroid.kit.SingletonCtx;
-import cn.droidlover.xdroid.kit.XDroidConf;
+import cn.droidlover.xdroid.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/28.
  */
 
-public class DiskCache extends SingletonCtx<DiskCache> implements ICache {
+public class DiskCache implements ICache {
     private DiskLruCache cache;
 
     static String TAG_CACHE = "=====createTime{createTime}expireMills{expireMills}";
@@ -27,6 +26,8 @@ public class DiskCache extends SingletonCtx<DiskCache> implements ICache {
     private Pattern compile;
 
     public static final long NO_CACHE = -1L;
+
+    private static DiskCache instance;
 
     private DiskCache(Context context) {
         compile = Pattern.compile(REGEX);
@@ -39,6 +40,17 @@ public class DiskCache extends SingletonCtx<DiskCache> implements ICache {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static DiskCache getInstance(Context context) {
+        if (instance == null) {
+            synchronized (DiskCache.class) {
+                if (instance == null) {
+                    instance = new DiskCache(context.getApplicationContext());
+                }
+            }
+        }
+        return instance;
     }
 
     public void put(String key, String value) {
@@ -132,7 +144,7 @@ public class DiskCache extends SingletonCtx<DiskCache> implements ICache {
         return Codec.MD5.getMessageDigest(key.getBytes());
     }
 
-    public static File getDiskCacheDir(Context context, String dirName) {
+    private static File getDiskCacheDir(Context context, String dirName) {
         String cachePath;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
                 || !Environment.isExternalStorageRemovable()) {
@@ -143,12 +155,7 @@ public class DiskCache extends SingletonCtx<DiskCache> implements ICache {
         return new File(cachePath + File.separator + dirName);
     }
 
-    @Override
-    protected DiskCache newInstance(Context context) {
-        return new DiskCache(context);
-    }
-
-    public String getCacheDir() {
+    private String getCacheDir() {
         return XDroidConf.CACHE_DISK_DIR;
     }
 

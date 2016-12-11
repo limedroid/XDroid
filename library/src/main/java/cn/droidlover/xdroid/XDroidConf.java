@@ -1,5 +1,6 @@
-package cn.droidlover.xdroid.kit;
+package cn.droidlover.xdroid;
 
+import cn.droidlover.xdroid.imageloader.ILoader;
 import cn.droidlover.xdroid.router.Router;
 
 /**
@@ -19,4 +20,7 @@ public class XDroidConf {
     public static final int ROUTER_ANIM_ENTER = Router.RES_NONE;
     public static final int ROUTER_ANIM_EXIT = Router.RES_NONE;
 
+    // #imageloader
+    public static final int IL_LOADING_RES = ILoader.Options.RES_NONE;
+    public static final int IL_ERROR_RES = ILoader.Options.RES_NONE;
 }

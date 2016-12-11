@@ -9,7 +9,7 @@ import android.support.annotation.Nullable;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import cn.droidlover.xdroid.kit.XDroidConf;
+import cn.droidlover.xdroid.XDroidConf;
 
 /**
  * Created by wanglei on 2016/11/29.
@@ -58,6 +58,11 @@ public class Router {
 
     public Router putChar(@Nullable String key, char value) {
         getBundleData().putChar(key, value);
+        return this;
+    }
+
+    public Router putString(@Nullable String key, String value) {
+        getBundleData().putString(key, value);
         return this;
     }
 
