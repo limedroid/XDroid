@@ -27,7 +27,6 @@ import cn.droidlover.xdroid.demo.R;
 
 public class MainActivity extends XActivity {
 
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.tabLayout)
