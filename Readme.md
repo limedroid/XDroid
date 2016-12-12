@@ -10,6 +10,7 @@
 
 > Demo详细使用可参看Demo
 
+
 ## 特性
 
 **XDroid**主要有这些特性：
@@ -50,10 +51,20 @@ git clone https://github.com/limedroid/XDroid.git
 compile project(':library')
 ```
 
-
 ### step3
 
 修改`XDroidConf`配置类，主要针对log、cache、router、imageloader。若采用默认配置，此步骤可略过.
+
+
+## Demo效果
+
+<p align="center">
+	<img src="art/snapshot_2.png"/>
+</p>
+
+<p align="center">
+	<img src="art/snapshot_1.png"/>
+</p>
 
 
 ## 重要说明
@@ -70,8 +81,9 @@ compile project(':library')
 
 ## 感谢
 
-* 感谢各位江湖前辈大拿的帮助
 * 特别感谢基友石浩提供的建议和完美logo
+* 感谢干货提供的api
+
 
 ## 关于我
 

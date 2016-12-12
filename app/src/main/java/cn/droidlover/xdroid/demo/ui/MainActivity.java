@@ -1,8 +1,6 @@
 package cn.droidlover.xdroid.demo.ui;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,13 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bumptech.glide.GifRequestBuilder;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.droidlover.xdroid.base.XActivity;
 import cn.droidlover.xdroid.base.XFragmentAdapter;
 import cn.droidlover.xdroid.demo.R;
@@ -79,6 +74,7 @@ public class MainActivity extends XActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public int getLayoutId() {

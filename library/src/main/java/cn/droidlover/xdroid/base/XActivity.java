@@ -69,13 +69,12 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
 
     @Override
     public boolean useEventBus() {
-        return true;
+        return false;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        KnifeKit.unbind(unbinder);
         getUiDelegate().destory();
     }
 }

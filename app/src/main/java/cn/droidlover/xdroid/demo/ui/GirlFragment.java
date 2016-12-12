@@ -30,7 +30,7 @@ public class GirlFragment extends BasePagerFragment {
 
     @Override
     public void setLayoutManager(XRecyclerView recyclerView) {
-        recyclerView.verticalStaggeredLayoutManager(2);
+        recyclerView.gridLayoutManager(context, 2);
     }
 
     @Override

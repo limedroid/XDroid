@@ -86,10 +86,13 @@ public class WebActivity extends XActivity {
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
                 if (newProgress == 100) {
-                    contentLayout.showContent();
-                    url = webView.getUrl();
+                    if (contentLayout != null)
+                        contentLayout.showContent();
+                    if (webView != null)
+                        url = webView.getUrl();
                 } else {
-                    contentLayout.showLoading();
+                    if (contentLayout != null)
+                        contentLayout.showLoading();
                 }
             }
         });
@@ -124,7 +127,7 @@ public class WebActivity extends XActivity {
                 finish();
                 break;
             case R.id.action_share:
-                AppKit.shareText(this, webView.getTitle() + " " + webView.getUrl() + " 来自「趣刻」APP");
+                AppKit.shareText(this, webView.getTitle() + " " + webView.getUrl() + " 来自「XDroid」");
                 break;
             case R.id.action_refresh:
                 webView.reload();

@@ -2,18 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#ffffff"
     android:orientation="vertical"
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
-    android:background="#ffffff"
     android:paddingTop="4dp">
 
     <ImageView
         android:id="@+id/iv_girl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="200dp"
+        android:layout_height="200dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitXY" />
 
 </LinearLayout>

@@ -68,13 +68,12 @@ public abstract class XFragment extends Fragment implements UiCallback {
 
     @Override
     public boolean useEventBus() {
-        return true;
+        return false;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        KnifeKit.unbind(unbinder);
         BusFactory.getBus().unregister(this);
         getUiDelegate().destory();
     }

@@ -14,7 +14,6 @@ import cn.droidlover.xdroid.base.SimpleRecAdapter;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.demo.model.GankResults;
 import cn.droidlover.xdroid.imageloader.ILFactory;
-import cn.droidlover.xdroid.kit.Kits;
 import cn.droidlover.xdroid.kit.KnifeKit;
 
 /**
@@ -114,11 +113,8 @@ public class HomeAdapter extends SimpleRecAdapter<GankResults.Item, HomeAdapter.
             holder.tvAuthor.setText("");
         }
 
-        if (item.getCreatedAt() > 0) {
-            holder.tvTime.setText(Kits.Date.getMd(item.getCreatedAt()));
-        } else {
-            holder.tvTime.setText("");
-        }
+        holder.tvTime.setText(item.getCreatedAt());
+
         holder.tvType.setText(type);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -20,7 +20,6 @@ import okhttp3.Call;
 
 public abstract class BasePagerFragment extends XFragment {
 
-
     @BindView(R.id.contentLayout)
     XRecyclerContentLayout contentLayout;
 
@@ -71,9 +70,9 @@ public abstract class BasePagerFragment extends XFragment {
             public void onResponse(GankResults response, int id) {
                 if (!response.isError()) {
                     if (page > 1) {
-                        getAdapter().addData(response.getItems());
+                        getAdapter().addData(response.getResults());
                     } else {
-                        getAdapter().setData(response.getItems());
+                        getAdapter().setData(response.getResults());
                     }
 
                     contentLayout.getRecyclerView().setPage(page, MAX_PAGE);

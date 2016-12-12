@@ -8,20 +8,20 @@ import java.util.List;
 
 public class GankResults extends BaseModel {
 
-    private List<Item> items;
+    private List<Item> results;
 
-    public List<Item> getItems() {
-        return items;
+    public List<Item> getResults() {
+        return results;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setResults(List<Item> results) {
+        this.results = results;
     }
 
     public static class Item {
         private String _id;
         private String _ns;
-        private long createdAt;
+        private String createdAt;
         private String desc;
         private String publishedAt;
         private String source;
@@ -46,11 +46,11 @@ public class GankResults extends BaseModel {
             this._ns = _ns;
         }
 
-        public long getCreatedAt() {
+        public String getCreatedAt() {
             return createdAt;
         }
 
-        public void setCreatedAt(long createdAt) {
+        public void setCreatedAt(String createdAt) {
             this.createdAt = createdAt;
         }
 
