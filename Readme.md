@@ -53,7 +53,13 @@ compile project(':library')
 
 ### step3
 
-修改`kit`包下的`XDroidConf`配置类，主要针对log、cache、router。若采用默认配置，此步骤可略过.
+修改`XDroidConf`配置类，主要针对log、cache、router、imageloader。若采用默认配置，此步骤可略过.
+
+
+## 重要说明
+
+* [ButterKnife](https://github.com/JakeWharton/butterknife)使用的是8.4.0版本，重点是 `@BindView`，可以去项目官网查看。
+* [EventBus](https://github.com/greenrobot/EventBus)使用的是3.0.0版本,使用注解`@Subscribe`，具体如何使用可以查看官网。
 
 
 ## 相关文档
