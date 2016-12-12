@@ -3,8 +3,10 @@ package cn.droidlover.xdroid.demo.ui;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.droidlover.xdroid.base.XActivity;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.router.Router;
@@ -16,6 +18,7 @@ import cn.droidlover.xdroid.router.Router;
 public class AboutActivity extends XActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -33,6 +36,18 @@ public class AboutActivity extends XActivity {
     @Override
     public void setListener() {
 
+    }
+
+    @OnClick({
+            R.id.tv_github
+    })
+    public void clickEvent(View view) {
+        switch (view.getId()) {
+
+            case R.id.tv_github:
+                WebActivity.launch(context, "https://github.com/limedroid/XDroid", "XDroid");
+                break;
+        }
     }
 
     public static void launch(Activity activity) {
