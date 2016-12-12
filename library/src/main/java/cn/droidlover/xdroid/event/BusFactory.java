@@ -1,7 +1,5 @@
 package cn.droidlover.xdroid.event;
 
-import cn.droidlover.xdroid.imageloader.ILFactory;
-
 /**
  * Created by wanglei on 2016/12/2.
  */

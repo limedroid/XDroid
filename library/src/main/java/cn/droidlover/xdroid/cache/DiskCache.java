@@ -21,7 +21,7 @@ import cn.droidlover.xdroid.XDroidConf;
 public class DiskCache implements ICache {
     private DiskLruCache cache;
 
-    static String TAG_CACHE = "=====createTime{createTime}expireMills{expireMills}";
+    static String TAG_CACHE = "=====createTime{createTime_v}expireMills{expireMills_v}";
     static String REGEX = "=====createTime\\{(\\d{1,})\\}expireMills\\{(\\d{1,})\\}";
     private Pattern compile;
 
@@ -68,7 +68,7 @@ public class DiskCache implements ICache {
 
             DiskLruCache.Editor editor = cache.edit(name);
             StringBuilder content = new StringBuilder(value);
-            content.append(TAG_CACHE.replace("createTime", "" + Calendar.getInstance().getTimeInMillis()).replace("expireMills", "" + expireMills));
+            content.append(TAG_CACHE.replace("createTime_v", "" + Calendar.getInstance().getTimeInMillis()).replace("expireMills_v", "" + expireMills));
             editor.set(0, content.toString());
             editor.commit();
         } catch (IOException e) {
@@ -99,7 +99,7 @@ public class DiskCache implements ICache {
                     }
                     int index = content.indexOf("=====createTime");
 
-                    if ((createTime + expireMills < Calendar.getInstance().getTimeInMillis())
+                    if ((createTime + expireMills > Calendar.getInstance().getTimeInMillis())
                             || expireMills == NO_CACHE) {
                         return content.substring(0, index);
                     } else {

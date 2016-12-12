@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import butterknife.BindView;
+import cn.droidlover.qtcontentlayout.QTContentLayout;
 import cn.droidlover.xdroid.base.SimpleRecAdapter;
 import cn.droidlover.xdroid.base.XFragment;
 import cn.droidlover.xdroid.demo.R;
@@ -59,11 +60,11 @@ public abstract class BasePagerFragment extends XFragment {
     }
 
     public void loadData(final int page) {
-        NetApi.getGankData(getType(), PAGE_SIZE, page, new JsonCallback<GankResults>() {
+        NetApi.getGankData(getType(), PAGE_SIZE, page, new JsonCallback<GankResults>(1 * 60 * 60 * 1000) {
 
             @Override
             public void onFail(Call call, Exception e, int id) {
-                contentLayout.showError();
+                contentLayout.setDisplayState(QTContentLayout.STATE_ERROR);
             }
 
             @Override
