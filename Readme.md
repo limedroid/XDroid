@@ -72,6 +72,12 @@ compile project(':library')
 * [ButterKnife](https://github.com/JakeWharton/butterknife)使用的是8.4.0版本，重点是 `@BindView`，可以去项目官网查看。
 * [EventBus](https://github.com/greenrobot/EventBus)使用的是3.0.0版本,使用注解`@Subscribe`，具体如何使用可以查看官网。
 
+## ToDo
+
+* MVP、retrofit、rx迁移（v2.0）
+* 权限适配（v2.0）
+* compact工具（v3.0）
+
 
 ## 相关文档
 
