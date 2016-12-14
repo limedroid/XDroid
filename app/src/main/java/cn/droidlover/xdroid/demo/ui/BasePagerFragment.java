@@ -24,7 +24,7 @@ public abstract class BasePagerFragment extends XFragment {
     @BindView(R.id.contentLayout)
     XRecyclerContentLayout contentLayout;
 
-    protected static final int PAGE_SIZE = 15;
+    protected static final int PAGE_SIZE = 10;
     protected static final int MAX_PAGE = 10;
 
 
@@ -57,6 +57,7 @@ public abstract class BasePagerFragment extends XFragment {
                 });
 
         contentLayout.loadingView(View.inflate(getContext(), R.layout.view_loading, null));
+        contentLayout.getRecyclerView().useDefLoadMoreView();
     }
 
     public void loadData(final int page) {
