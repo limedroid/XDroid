@@ -17,6 +17,8 @@ public interface ILoader {
 
     void loadNet(ImageView target, String url, Options options);
 
+    void loadNet(Context context, String url, Options options, LoadCallback callback);
+
     void loadResource(ImageView target, int resId, Options options);
 
     void loadAssets(ImageView target, String assetName, Options options);
@@ -26,6 +28,10 @@ public interface ILoader {
     void clearMemoryCache(Context context);
 
     void clearDiskCache(Context context);
+
+    void resume(Context context);
+
+    void pause(Context context);
 
 
     class Options {
