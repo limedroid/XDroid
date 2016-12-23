@@ -11,6 +11,17 @@
 > Demo详细使用可参看Demo
 
 
+## XDroidMvp
+
+XDroidMvp是基于XDroid的MVP实现，不是传统意义的MVP，不需写接口，可无缝切换MVC，可能是当前最好用的MVP框架。
+
+传送门：[**https://github.com/limedroid/XDroidMvp**](https://github.com/limedroid/XDroidMvp)
+
+XDroid推出以来，得到了很多朋友的快速反馈，目前有很多朋友在新项目或是老项目中使用XDroid，为了方便学习和交流，可以加入QQ群：
+
+XDroid交流群：**153569290**
+
+
 ## 特性
 
 **XDroid**主要有这些特性：
