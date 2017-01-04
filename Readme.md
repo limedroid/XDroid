@@ -46,7 +46,7 @@ XDroid交流群：**153569290**
 
 ## Get Started
 
-使用，仅需三步：
+使用，仅需四步：
 
 ### step1  
 
@@ -63,6 +63,24 @@ compile project(':library')
 ```
 
 ### step3
+
+拷贝`conf.gradle`到您的项目根目录，并修改项目gradle文件下引入：
+```groovy
+apply from: "conf.gradle"
+```
+
+并添加:
+
+```groovy
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+### step4
 
 修改`XDroidConf`配置类，主要针对log、cache、router、imageloader。若采用默认配置，此步骤可略过.
 
