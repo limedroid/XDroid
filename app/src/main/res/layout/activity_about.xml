@@ -21,8 +21,8 @@
             android:textSize="14sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_above="@id/tv_info"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="50dp"

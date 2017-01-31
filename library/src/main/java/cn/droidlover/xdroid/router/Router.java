@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class Router {
     private Activity from;
     private Class<?> to;
     private Bundle data;
+    private ActivityOptionsCompat options;
     private int requestCode = -1;
     private int enterAnim = XDroidConf.ROUTER_ANIM_ENTER;
     private int exitAnim = XDroidConf.ROUTER_ANIM_EXIT;
@@ -32,10 +35,18 @@ public class Router {
         intent = new Intent();
     }
 
-    public static Router newIntent() {
-        return new Router();
+    public static Router newIntent(Activity context) {
+        Router router = new Router();
+        router.from = context;
+        return router;
     }
 
+    public static Router newIntent() {
+        Router router = new Router();
+        return router;
+    }
+
+    @Deprecated
     public Router from(Activity from) {
         this.from = from;
         return this;
@@ -43,6 +54,13 @@ public class Router {
 
     public Router to(Class<?> to) {
         this.to = to;
+        return this;
+    }
+
+    public Router addFlags(int flags) {
+        if (intent != null) {
+            intent.addFlags(flags);
+        }
         return this;
     }
 
@@ -58,6 +76,11 @@ public class Router {
 
     public Router putChar(@Nullable String key, char value) {
         getBundleData().putChar(key, value);
+        return this;
+    }
+
+    public Router putInt(@Nullable String key, int value) {
+        getBundleData().putInt(key, value);
         return this;
     }
 
@@ -120,6 +143,11 @@ public class Router {
     }
 
 
+    public Router options(ActivityOptionsCompat options) {
+        this.options = options;
+        return this;
+    }
+
     public Router requestCode(int requestCode) {
         this.requestCode = requestCode;
         return this;
@@ -143,18 +171,26 @@ public class Router {
 
                 intent.putExtras(getBundleData());
 
-                if (requestCode < 0) {
-                    from.startActivity(intent);
-                } else {
-                    from.startActivityForResult(intent, requestCode);
-                }
+                if (options == null) {
+                    if (requestCode < 0) {
+                        from.startActivity(intent);
+                    } else {
+                        from.startActivityForResult(intent, requestCode);
+                    }
 
-                if (enterAnim > 0 && exitAnim > 0) {
-                    from.overridePendingTransition(enterAnim, exitAnim);
+                    if (enterAnim > 0 && exitAnim > 0) {
+                        from.overridePendingTransition(enterAnim, exitAnim);
+                    }
+                } else {
+                    if (requestCode < 0) {
+                        ActivityCompat.startActivity(from, intent, options.toBundle());
+                    } else {
+                        ActivityCompat.startActivityForResult(from, intent, requestCode, options.toBundle());
+                    }
                 }
 
                 if (callback != null) {
-                    callback.OnNext(from, to);
+                    callback.onNext(from, to);
                 }
             }
         } catch (Throwable throwable) {

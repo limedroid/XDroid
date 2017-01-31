@@ -15,11 +15,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import butterknife.BindView;
-import cn.droidlover.qtcontentlayout.QTContentLayout;
 import cn.droidlover.xdroid.base.XActivity;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.demo.kit.AppKit;
 import cn.droidlover.xdroid.router.Router;
+import cn.droidlover.xstatecontroller.XStateController;
 
 /**
  * Created by wanglei on 2016/12/11.
@@ -34,7 +34,7 @@ public class WebActivity extends XActivity {
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout swipeRefreshLayout;
     @BindView(R.id.contentLayout)
-    QTContentLayout contentLayout;
+    XStateController contentLayout;
 
     String url;
     String desc;
@@ -183,8 +183,7 @@ public class WebActivity extends XActivity {
     }
 
     public static void launch(Activity activity, String url, String desc) {
-        Router.newIntent()
-                .from(activity)
+        Router.newIntent(activity)
                 .to(WebActivity.class)
                 .putString(PARAM_URL, url)
                 .putString(PARAM_DESC, desc)

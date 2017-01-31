@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import butterknife.BindView;
-import cn.droidlover.qtcontentlayout.QTContentLayout;
 import cn.droidlover.xdroid.base.SimpleRecAdapter;
 import cn.droidlover.xdroid.base.XFragment;
 import cn.droidlover.xdroid.demo.R;
@@ -65,7 +64,7 @@ public abstract class BasePagerFragment extends XFragment {
 
             @Override
             public void onFail(Call call, Exception e, int id) {
-                contentLayout.setDisplayState(QTContentLayout.STATE_ERROR);
+                contentLayout.showError();
             }
 
             @Override
