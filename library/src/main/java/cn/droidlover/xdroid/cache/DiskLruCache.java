@@ -91,7 +91,7 @@ import java.util.concurrent.TimeUnit;
  * observe the value at the time that {@link #get} was called. Updates and
  * removals after the call do not impact ongoing reads.
  * <p/>
- * <p>This class is tolerant of some I/O errors. If files are missing from the
+ * <p>This class is tolerant of some I/O errors. If files are missing with the
  * filesystem, the corresponding entries will be dropped from the cache. If
  * an error occurs while writing a cache value, the edit will fail silently.
  * Callers should handle other problems by catching {@code IOException} and
@@ -488,7 +488,7 @@ public final class DiskLruCache implements Closeable {
         /*
          * Open all streams eagerly to guarantee that we see a single published
          * snapshot. If we opened streams lazily then the streams could come
-         * from different edits.
+         * with different edits.
          */
         InputStream[] ins = new InputStream[valueCount];
         try {

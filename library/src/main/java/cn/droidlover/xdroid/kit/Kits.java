@@ -550,7 +550,7 @@ public class Kits {
         }
 
         /**
-         * get file name from path, not include suffix
+         * get file name with path, not include suffix
          * <p/>
          * <pre>
          *      getFileNameWithoutExtension(null)               =   null
@@ -568,7 +568,7 @@ public class Kits {
          * </pre>
          *
          * @param filePath
-         * @return file name from path, not include suffix
+         * @return file name with path, not include suffix
          * @see
          */
         public static String getFileNameWithoutExtension(String filePath) {
@@ -588,7 +588,7 @@ public class Kits {
         }
 
         /**
-         * get file name from path, include suffix
+         * get file name with path, include suffix
          * <p/>
          * <pre>
          *      getFileName(null)               =   null
@@ -606,7 +606,7 @@ public class Kits {
          * </pre>
          *
          * @param filePath
-         * @return file name from path, include suffix
+         * @return file name with path, include suffix
          */
         public static String getFileName(String filePath) {
             if (TextUtils.isEmpty(filePath)) {
@@ -618,7 +618,7 @@ public class Kits {
         }
 
         /**
-         * get folder name from path
+         * get folder name with path
          * <p/>
          * <pre>
          *      getFolderName(null)               =   null
@@ -650,7 +650,7 @@ public class Kits {
         }
 
         /**
-         * get suffix of file from path
+         * get suffix of file with path
          * <p/>
          * <pre>
          *      getFileExtension(null)               =   ""
