@@ -61,11 +61,6 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
         getUiDelegate().pause();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        BusFactory.getBus().unregister(this);
-    }
 
     @Override
     public boolean useEventBus() {
@@ -75,6 +70,7 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        BusFactory.getBus().unregister(this);
         getUiDelegate().destory();
     }
 }
