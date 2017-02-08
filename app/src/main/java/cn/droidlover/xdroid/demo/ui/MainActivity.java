@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,8 @@ import butterknife.BindView;
 import cn.droidlover.xdroid.base.XActivity;
 import cn.droidlover.xdroid.base.XFragmentAdapter;
 import cn.droidlover.xdroid.demo.R;
+import cn.droidlover.xdroid.demo.model.Event;
+import cn.droidlover.xdroid.kit.Kits;
 
 /**
  * Created by wanglei on 2016/11/29.
@@ -75,6 +80,17 @@ public class MainActivity extends XActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(Event.TestEvent event) {
+        if (event != null && !Kits.Empty.check(event.name)) {
+            toolbar.setTitle(event.name);
+        }
+    }
+
+    @Override
+    public boolean useEventBus() {
+        return true;
+    }
 
     @Override
     public int getLayoutId() {

@@ -26,7 +26,7 @@ ext {
             "okhttp3"        : "com.squareup.okhttp3:okhttp:3.3.0",
             "gson"           : "com.google.code.gson:gson:2.6.2",
             "eventbus"       : "org.greenrobot:eventbus:3.0.0",
-            "xrecyclerview"  : "com.github.limedroid:ARecyclerView:v1.1.0",
+            "xrecyclerview"  : "com.github.limedroid:ARecyclerView:v1.1.5",
             "okhttputils"    : "com.zhy:okhttputils:2.6.2",
             "canary-debug"   : "com.squareup.leakcanary:leakcanary-android:1.4-beta2",
             "canary-release" : "com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2",
