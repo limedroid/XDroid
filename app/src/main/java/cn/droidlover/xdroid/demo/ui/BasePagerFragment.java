@@ -5,7 +5,7 @@ import android.view.View;
 
 import butterknife.BindView;
 import cn.droidlover.xdroid.base.SimpleRecAdapter;
-import cn.droidlover.xdroid.base.XFragment;
+import cn.droidlover.xdroid.base.XLazyFragment;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.demo.model.GankResults;
 import cn.droidlover.xdroid.demo.net.JsonCallback;
@@ -18,7 +18,7 @@ import okhttp3.Call;
  * Created by wanglei on 2016/12/10.
  */
 
-public abstract class BasePagerFragment extends XFragment {
+public abstract class BasePagerFragment extends XLazyFragment {
 
     @BindView(R.id.contentLayout)
     XRecyclerContentLayout contentLayout;
@@ -31,11 +31,6 @@ public abstract class BasePagerFragment extends XFragment {
     public void initData(Bundle savedInstanceState) {
         initAdapter();
         loadData(1);
-    }
-
-    @Override
-    public void setListener() {
-
     }
 
     private void initAdapter() {

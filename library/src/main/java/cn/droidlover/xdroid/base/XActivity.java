@@ -68,6 +68,11 @@ public abstract class XActivity extends AppCompatActivity implements UiCallback{
     }
 
     @Override
+    public void setListener() {
+
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         BusFactory.getBus().unregister(this);

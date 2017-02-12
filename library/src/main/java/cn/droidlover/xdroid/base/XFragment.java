@@ -72,6 +72,11 @@ public abstract class XFragment extends Fragment implements UiCallback {
     }
 
     @Override
+    public void setListener() {
+
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         BusFactory.getBus().unregister(this);
