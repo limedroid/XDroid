@@ -31,6 +31,6 @@ ext {
             "canary-debug"   : "com.squareup.leakcanary:leakcanary-android:1.4-beta2",
             "canary-release" : "com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2",
             "avi-loading"    : "com.wang.avi:library:1.0.2",
-            "XDroid-Base"    : "com.github.fodroid:XDroid-Base:v1.3"
+            "XDroid-Base"    : "com.github.fodroid:XDroid-Base:v1.4"
     ]
 }

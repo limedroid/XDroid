@@ -5,6 +5,7 @@ import android.os.Bundle;
 import butterknife.Unbinder;
 import cn.droidlover.xdroid.event.BusFactory;
 import cn.droidlover.xdroid.kit.KnifeKit;
+import cn.droidlover.xdroidbase.base.LazyFragment;
 
 /**
  * Created by wanglei on 2017/1/26.
