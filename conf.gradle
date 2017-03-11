@@ -1,16 +1,16 @@
 ext {
 
     android = [
-            compileSdkVersion: 23,
-            buildToolsVersion: "23.0.2",
+            compileSdkVersion: 24,
+            buildToolsVersion: "24.0.1",
 
             minSdkVersion    : 15,
-            targetSdkVersion : 23,
+            targetSdkVersion : 24,
 
             versionCode      : 1,
             versionName      : '1.0.0',
 
-            VSupportSdk      : '23.3.0'
+            VSupportSdk      : '25.1.0'
     ]
 
     dependencies = [
@@ -30,6 +30,7 @@ ext {
             "okhttputils"    : "com.zhy:okhttputils:2.6.2",
             "canary-debug"   : "com.squareup.leakcanary:leakcanary-android:1.4-beta2",
             "canary-release" : "com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2",
-            "avi-loading"    : "com.wang.avi:library:1.0.2"
+            "avi-loading"    : "com.wang.avi:library:1.0.2",
+            "XDroid-Base"    : "com.github.fodroid:XDroid-Base:v1.3"
     ]
 }

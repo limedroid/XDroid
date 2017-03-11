@@ -9,9 +9,9 @@ import java.lang.reflect.ParameterizedType;
 import java.net.UnknownHostException;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import cn.droidlover.xdroid.cache.DiskCache;
 import cn.droidlover.xdroid.demo.App;
 import cn.droidlover.xdroid.demo.kit.AppKit;
+import cn.droidlover.xdroidbase.cache.DiskCache;
 import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.Request;

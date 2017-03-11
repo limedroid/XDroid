@@ -31,4 +31,5 @@ dependencies {
     compile rootProject.ext.dependencies["glide"]
     compile rootProject.ext.dependencies["okhttputils"]
     compile rootProject.ext.dependencies["gson"]
+    compile rootProject.ext.dependencies["XDroid-Base"]
 }

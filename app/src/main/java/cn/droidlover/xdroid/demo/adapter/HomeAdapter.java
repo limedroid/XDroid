@@ -13,8 +13,8 @@ import butterknife.BindView;
 import cn.droidlover.xdroid.base.SimpleRecAdapter;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.demo.model.GankResults;
-import cn.droidlover.xdroid.imageloader.ILFactory;
 import cn.droidlover.xdroid.kit.KnifeKit;
+import cn.droidlover.xdroidbase.imageloader.ILFactory;
 
 /**
  * Created by wanglei on 2016/12/10.

@@ -16,10 +16,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import cn.droidlover.xdroid.base.XActivity;
-import cn.droidlover.xdroid.base.XFragmentAdapter;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.demo.model.Event;
-import cn.droidlover.xdroid.kit.Kits;
+import cn.droidlover.xdroidbase.base.XFragmentAdapter;
+import cn.droidlover.xdroidbase.kit.Kits;
 
 /**
  * Created by wanglei on 2016/11/29.

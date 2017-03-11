@@ -18,7 +18,7 @@ import butterknife.BindView;
 import cn.droidlover.xdroid.base.XActivity;
 import cn.droidlover.xdroid.demo.R;
 import cn.droidlover.xdroid.demo.kit.AppKit;
-import cn.droidlover.xdroid.router.Router;
+import cn.droidlover.xdroidbase.router.Router;
 import cn.droidlover.xstatecontroller.XStateController;
 
 /**
