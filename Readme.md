@@ -4,6 +4,7 @@
 
 <p align="center">
 	<img src="xdroid_logo_128.png"/>
+	
 </p>
 
 **XDroid**是一个轻量级的Android快速开发框架，由`UI`、`Cache`、`Event`、`ImageLoader`、`Kit`、`Log`、`Router`、`Net`等几个部分组成。其设计思想是使用接口对各模块解耦规范化，不强依赖某些明确的三方类库，使得三方类库可自由搭配组装，方便替换。可快速、自由的进行App开发。
