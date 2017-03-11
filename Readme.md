@@ -11,11 +11,31 @@
 > Demo详细使用可参看Demo
 
 
+## XDroid-Base
+
+XDroid-Base包含开发中常用的一些快速开发类，可作为一个简单的开发框架,由Base、Cache、ImageLoader、Kit、Log、Router等几个部分组成。可快速、自由的按需扩展进行App开发。
+
+传送门：[**https://github.com/fodroid/XDroid-Base**](https://github.com/fodroid/XDroid-Base)
+
+## XDroid-Databinding
+
+XDroid-Databinding是XDroid快速开发框架的Databinding版本，大部分源码也与XDroid类似。
+
+传送门：[**https://github.com/fodroid/XDroid-Databinding**](https://github.com/fodroid/XDroid-Databinding)
+
+
 ## XDroidMvp
 
 XDroidMvp是基于XDroid的MVP实现，不是传统意义的MVP，不需写接口，可无缝切换MVC，可能是当前最好用的MVP框架。
 
 传送门：[**https://github.com/limedroid/XDroidMvp**](https://github.com/limedroid/XDroidMvp)
+
+## XDroidMvp-Databinding
+
+XDroidMvp-Databinding是基于XDroidMvp的Databinding版本，大部分源码也与XDroidMvp类似。
+
+传送门：开发中
+
 
 XDroid推出以来，得到了很多朋友的快速反馈，目前有很多朋友在新项目或是老项目中使用XDroid，为了方便学习和交流，可以加入QQ群：
 
@@ -116,10 +136,20 @@ allprojects {
 
 ## 感谢
 
-* 特别感谢基友石浩提供的建议和完美logo
 * 感谢干货提供的api
 
 
-## 关于我
-
+# 关于我们
+### droidlover
 **Email** : droidlover@126.com
+
+**Github** : https://github.com/limedroid
+
+**简书**：http://www.jianshu.com/u/276be5744ca0
+### fodroid
+**Email** : me.shihao@qq.com
+
+**Github** : https://github.com/fodroid
+
+**简书**：http://www.jianshu.com/u/caf7ea3607ed
+
